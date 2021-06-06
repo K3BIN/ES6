@@ -18,10 +18,12 @@ function Calificación(tiempo, Estudiante, Grupo, ...Calificaciones){
 		const espacio=20;
 		nombreTabla="Materias";
 		let dif= espacio - nombreTabla.length;
-		console.log(`${nombreTabla}${" ".repeat(dif)} | Calificaciones`);
+		console.log(`${nombreTabla}${" ".repeat(dif)} | Calificación Final`);
 		for(i in estudiante.Materias){
 			let dif= espacio - estudiante.Materias[i].length;
-			console.log(`${estudiante.Materias[i]}${" ".repeat(dif)} | ${Calificaciones}`);
+			if(i==0) var j=0;
+			console.log(`${estudiante.Materias[i]}${" ".repeat(dif)} | ${Calificaciones[j]}`);
+			j++;
 		}
 	}, tiempo);
 }
