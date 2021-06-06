@@ -2,16 +2,6 @@
 function Calificación(tiempo, Estudiante, Grupo, ...Calificaciones){
 	setTimeout(function()
 	{
-		if(typeof Estudiante != "object"){
-			console.error('No es un objeto');
-			return;
-		}
-
-		if(typeof Grupo != "function"){
-			console.error('No es una función');
-			return;
-		}
-		
 		Grupo(); 
 		console.log(`Estudiante:${A}\nGrupo:${G}\nProfesor: ${"Pedro Carrillo Jiménez"}\n`);
 
@@ -39,12 +29,11 @@ let estudiante={
 	Regular: true
 }
 
-function grupo(datos){
-	A=`${estudiante.nombre}`;
-	G=`${estudiante.Nivel}${estudiante.Carrera}${estudiante.Turno}${estudiante.Semestre}`;
-}
+let grupo =	(datos=>{A=`${estudiante.nombre}`;
+		G=`${estudiante.Nivel}${estudiante.Carrera}${estudiante.Turno}${estudiante.Semestre}`;});
+
 grupo(estudiante);
-Calificación(1500,estudiante, grupo,9,8,7);
+Calificación(1500,estudiante,grupo,9,8,7);
 
 
 
