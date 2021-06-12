@@ -7,18 +7,17 @@ var Nomciclo = {
 	["cuarto" + ciclo]: "Ciclo Completo",
 }; 
 
-let main = ((tiempo)=>{
-	console.log(`1-${Nomciclo["primer" + ciclo]}\n2-${Nomciclo["segundo" + ciclo]}\n3-${Nomciclo["tercer" + ciclo]}\n4-${Nomciclo["cuarto" + ciclo]}`);
+let main = ((tiempo, ...noC)=>{
+		console.log(`${noC[0]}-${Nomciclo["primer" + ciclo]}\n${noC[1]}-${Nomciclo["segundo" + ciclo]}\n${noC[2]}-${Nomciclo["tercer" + ciclo]}\n${noC[3]}-${Nomciclo["cuarto" + ciclo]}`);
 	setTimeout(function()
 	{
 		let noCiclo = window.prompt(`Digita el número de ciclo por ejecutar`, "Ej. 1");
-
 		if(Object.is(noCiclo, "1")){Lavado(color,1500);}
 		if(Object.is(noCiclo, "2")){Enjuague(color,1500);}
 		if(Object.is(noCiclo, "3")){Centrifugado(color,1500);}
 		if(Object.is(noCiclo, "4")){CC(color,1500);}
 	}, tiempo);		
-})(500);
+})(500,1,2,3,4);
 
 let peso={
 	Peso: prompt(`Peso de la carga (kg)`, "Máx 20kg"),
